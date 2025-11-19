@@ -28,9 +28,9 @@ model.compile(optimizer=Adam(learning_rate=0.01),
 
 model.fit(X_train, y_train, epochs=10)
 
-model.evaluate(X_test, y_test)
+# model.evaluate(X_test, y_test)
 
-print(model.evaluate(X_test, y_test))
+# print(model.evaluate(X_test, y_test))
 # display_images(X_test)
 
 def get_random_image():
@@ -39,11 +39,11 @@ def get_random_image():
         digit = random.randint(0, 1)
         digits.append(digit)
     array = np.array(digits, dtype=int)
-    print(array)
     
-    print(array.shape)
     return array  
 image = get_random_image()
 
-model.predict(image)
+print(model.predict(image.reshape(1, 64)))
+
+
 
